@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+   
+<h2>#{{book.id}} {{book.name}}</h2>
+<hr>
+<p>name:{{book.name}}</p>
+<p>price:{{book.price}}</p>
+<p>introduction:{{book.introduction | linebreaksbr}}</p>
+<a href="../" class="btn btn-info">back</a>
+
+{% endblock main %}

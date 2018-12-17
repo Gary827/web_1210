@@ -1,4 +1,4 @@
-"""web_1210 URL Configuration
+"""web_1212 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,13 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from . import views
+# from web_1212 import views
+# from main import views as main
+from books import views as book_views
 
 urlpatterns = [
-    path('', views.root),
-    path('<str:name>/', views.hello),
-    path('s/<int:number>/',views.s),
-    path('l/<int:number1>/<int:number2>/',views.l),
     path('admin/', admin.site.urls),
+    # path('', views.index),
+    # path('pow/<int:x>/<int:y>/', views.pow),
+    # path('main/', main.index),
+    # path('l/<int:num1>/<int:num2>/', main.l),
+
+    path('books/', book_views.index, name='books-index'),
+    path('books/<int:pk>/',book_views.show, name='books-show'),
+    path('books/add/', book_views.add, name='books-add'),
 ]
