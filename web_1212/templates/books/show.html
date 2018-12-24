@@ -9,4 +9,7 @@
 <p>introduction:{{book.introduction | linebreaksbr}}</p>
 <a href="../" class="btn btn-info">back</a>
 
+<a href="{% url 'books:edit' book.id %}" class="btn btn-info">edit</a>
+<a href="{% url 'books:delete' book.id %}" class="btn btn-danger">delete</a>
+
 {% endblock main %}
